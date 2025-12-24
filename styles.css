@@ -1,0 +1,195 @@
+/* 1. GLOBAL RESET & VARIABLES */
+:root {
+    /* CSS Variables allow you to change colors in one place */
+    --primary-color: #2c3e50;    /* Dark Blue - Professional */
+    --accent-color: #3498db;     /* Light Blue - For links/buttons */
+    --bg-light: #f4f4f4;         /* Light Gray - For alternate sections */
+    --text-color: #333;          /* Dark Gray - Easy to read text */
+    --white: #ffffff;
+}
+
+/* The 'wildcard' selector (*) resets default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't increase element width */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* 2. REUSABLE UTILITY CLASSES */
+.container {
+    max-width: 1100px; /* Limits width on large screens */
+    margin: 0 auto;    /* Centers content horizontally */
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+/* 3. HEADER & NAVIGATION */
+header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 20px 0;
+    position: sticky; /* Keeps header at top when scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;             /* Places Logo and Nav side-by-side */
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    list-style: none;
+    display: flex;             /* Places menu items in a horizontal row */
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: var(--white);
+    font-weight: bold;
+}
+
+/* 4. HERO SECTION */
+.hero {
+    background: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.bio {
+    max-width: 700px;
+    margin: 0 auto 30px auto; /* Centers the text block */
+}
+
+.btn {
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s; /* Smooth color change on hover */
+}
+
+.btn:hover {
+    background: var(--primary-color);
+}
+
+/* 5. SECTIONS GENERAL STYLING */
+section {
+    padding: 60px 0;
+}
+
+.section-gray {
+    background: var(--bg-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+/* 6. SKILLS GRID (Using CSS Grid) */
+.skills-grid {
+    display: grid;
+    /* Creates columns that automatically fit the screen width */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--white);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow effect */
+    font-weight: bold;
+}
+
+/* 7. EXPERIENCE TIMELINE */
+.timeline-item {
+    background: var(--white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-color); /* The colored line on the left */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.timeline-item h4 {
+    font-size: 1.2rem;
+}
+
+.timeline-item .date {
+    font-size: 0.9rem;
+    color: #777;
+    display: block;      /* Forces date to its own line */
+    margin-bottom: 10px;
+}
+
+.timeline-item .institution {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* 8. PUBLICATIONS LIST */
+.pub-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pub-list li {
+    background: var(--white);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* 9. FOOTER */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* 10. MEDIA QUERIES (Mobile Responsiveness) */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column; /* Stack logo and menu on mobile */
+    }
+
+    header ul {
+        margin-top: 20px;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
